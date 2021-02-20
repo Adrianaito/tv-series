@@ -1,0 +1,26 @@
+<div class="container">
+  <%= image_tag @serie.image, alt: "alttext" %>
+  <div class="card-body">
+    <p class="card-text"><%= @serie.title %></p>
+    <p>Rating: <%= @serie.rating %> </p>
+    <% if @serie.reviews.any? %>
+      <p>
+        <strong>Reviews:</strong>
+      </p>
+      <ul>
+        <% @serie.reviews.each do |review| %>
+          <li><%= review.content %></li>
+          <%= link_to "delete review", review_path(review), method: :delete  %>
+          <%# def destroy
+          @review = Review.find(params[:id])
+          @review.destroy
+          end %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'add review', new_series_review_path(@serie)  %>
+<%= link_to 'Back', series_index_path %>
+<%= link_to 'add', new_series_path  %>
+<%= link_to "delete", series_path(@serie), method: :delete  %>

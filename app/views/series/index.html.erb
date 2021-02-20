@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <%= simple_form_for :search, url: series_index_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
+  <% @series.each do |serie| %>
+    <div class="card-category">
+      <%= image_tag serie.image, alt: "alttext" %>
+      <%= link_to " " , series_path(serie), class: 'card-link' %>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= serie.title %></p>
+      <p><%= serie.rating %> </p>
+    </div>
+  <% end %>
+</div>
+</div>

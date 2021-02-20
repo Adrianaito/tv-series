@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>New Review for <%= @serie.title %></h1>
+  <%# <form action="/restaurants/3/reviews" method="post"></form> %>
+  <%= simple_form_for [@serie, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>

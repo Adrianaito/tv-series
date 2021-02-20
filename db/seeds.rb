@@ -1,7 +1,33 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts 'Cleaning database...'
+Serie.destroy_all
+puts 'creating series...'
+
+series = ['friends', 'the+office', 'game+of+thrones']
+
+def create_serie(serie)
+  url = "https://www.omdbapi.com/?t=#{serie}&apikey=adf1f2d7"
+  serie_serialized = open(url).read
+  serie_hash = JSON.parse(serie_serialized)
+  rating = serie_hash["Ratings"][0]['Value']
+  Serie.create!(title: serie_hash['Title'],
+                rating: rating, image: serie_hash['Poster'])
+end
+
+series.each do |serie|
+  create_serie(serie)
+end
+
+
+
+
+
+
+# url = 'http://www.omdbapi.com/?i=tt3896198&apikey=14eb96e7&'
+# movie_serialized = open(url).read
+# movies = JSON.parse(movie_serialized)
+# ratings = movies["Ratings"]
+
+# Serie.create!(title: ratings[0]["Value"])
+
+
+puts "Created #{Serie.count} series!"
