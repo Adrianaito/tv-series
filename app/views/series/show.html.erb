@@ -1,21 +1,33 @@
-<div class="container">
-  <%= image_tag @serie.image, alt: "alttext" %>
-  <div class="card-body">
-    <p class="card-text"><%= @serie.title %></p>
-    <p>Rating: <%= @serie.rating %> </p>
-    <% if @serie.reviews.any? %>
-      <p>
+<div class="card-review-container">
+  <div class="card-category-show card-left">
+    <%= image_tag @serie.image, class: 'card-img', alt: "alttext" %>
+    <div class="card-body-show">
+      <p class="card-text-show"><%= @serie.title %></p>
+      <p>Rating : <%= @serie.rating %> </p>
+        <%= link_to 'add review', new_series_review_path(@serie), class: 'card-link-show btn badge-warning'  %>
+　 　     <%= link_to "delete", serie_path(@serie), class: 'card-link-show btn badge-warning', method: :delete  %>
+    </div>
+  </div>
+    <%#= image_tag @serie.image, alt: "alttext" %>
+  <div class="card-category-show card-rigth">
+    <!--<p class="card-text"><%= @serie.title %></p>
+    <p>Rating: <%= @serie.rating %> </p>-->
+      <p class="card-review-title">
         <strong>Reviews:</strong>
       </p>
-      <ul>
+    <% if @serie.reviews.any? %>
+      <!--<ul>-->
         <% @serie.reviews.each do |review| %>
-          <li><%= review.content %></li>
-          <%= link_to "delete review", review_path(review), method: :delete  %>
+          <div class="review-content">
+          <q class="review-text"><%= review.content %></q>
+            <%= link_to review_path(review), class: 'remove-link',  method: :delete, data: {confirm: "Delete review?"} do %>
+             <i class="far fa-trash-alt icon"></i>
+             <% end %>
+          </div>
         <% end %>
-      </ul>
+     <!-- </ul>-->
     <% end %>
   </div>
+
 </div>
-<%= link_to 'add review', new_series_review_path(@serie)  %>
-<%= link_to 'Back', series_path %>
-<%= link_to "delete", serie_path(@serie), method: :delete  %>
+

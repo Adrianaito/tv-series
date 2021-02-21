@@ -1,0 +1,73 @@
+.card-body-show {
+
+}
+.card-link-show {
+  font-size: 1rem;
+  margin-top: 1em;
+}
+.card-review-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+.card-category-show {
+  // position: relative;
+  // margin-top: 10em;
+  background-size: cover;
+  background-position: center;
+  // height: fit-content;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $gray;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 1em;
+  width: 20rem;
+  min-width: 10em;
+  // margin: 1em;
+  // margin-top: 0;
+}
+
+.card-left {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-rigth {
+  // margin-top: 10em;
+display: flex;
+  flex-direction: column;
+   width: 60%;
+   position: relative;
+   justify-content: start;
+    align-items: flex-start;
+    padding: 5em 3em;
+}
+
+
+.card-text-show {
+  margin-top: 1em;
+}
+.card-review-title {
+  position: absolute;
+  top: 2em;
+  left: 3em;
+
+}
+.remove-link {
+  color: $orange;
+}
+.review-text {
+  font-weight: lighter;
+  display: inline-block;
+    padding: 10px 0;
+}
+.icon {
+  font-size: 1rem;
+}

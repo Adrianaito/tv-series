@@ -1,11 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $white;
-  position: fixed;
+    // position: fixed;
   width: 100%;
   z-index: 2;
   // margin: 0 10px;
   padding: 10px 35px 10px 35px;
+  position: sticky;
+    top: 0;
 }
 
 .navbar-lewagon {

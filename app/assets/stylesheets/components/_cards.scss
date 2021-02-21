@@ -1,32 +1,23 @@
+
+
 .body-container {
   display: flex;
   align-items: center;
 }
 
 .card-grid {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-top: 4em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 10px;
-  // max-width: 100%;
 }
 .card-remove-link {
   color: white;
-// border-radius: 50%;
-// border: 1px solid white;
-// display: flex;
-// justify-content: center;
-// align-items: center;
+
 height: 0.5em;
 width: 0.5em;
-// position: absolute;
-// right: 10px;
-// top: 10px;
 opacity: 0.8;
-// transform: rotate(45deg);
 font-weight: lighter;
 &:hover {
   color: $deep-space;
@@ -46,11 +37,9 @@ font-weight: lighter;
   align-items: center;
   height: 30px;
   width: 30px;
-  // position: absolute;
   left: 10px;
   top: 10px;
   opacity: 0.8;
-// transform: rotate(45deg);
 font-weight: lighter;
 &:hover {
   color: white;
@@ -59,7 +48,7 @@ font-weight: lighter;
 }
 }
 .card-category {
-  // position: relative;
+  position: relative;
   background-size: cover;
   background-position: center;
   height: 16em;
@@ -76,12 +65,11 @@ font-weight: lighter;
   padding: 1em;
   min-width: 10em;
   margin: 1em;
-  // margin-top: 4em;
 }
 
 // To stretch the link on top of the card div
 .card-link {
-  // position: absolute;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -104,33 +92,12 @@ font-weight: lighter;
     margin-top: 1rem;
   }
 }
-.cards {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-gap: 3em;
-  // position: relative;
-}
 
 // // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  // .container {
-  //   display: flex;
-  //   justify-content: center;
-  // }
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
   .card-grid {
-    // grid-template-columns: 1fr;
     justify-content: center;
   }
-// }
-
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -140,16 +107,3 @@ font-weight: lighter;
   }
 }
 
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
