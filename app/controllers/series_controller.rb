@@ -1,11 +1,11 @@
 class SeriesController < ApplicationController
-  before_action :set_serie, only: [:show, :edit, :update, :destroy]
+  before_action :set_serie, only: [:show, :edit, :update, :destroy ]
   def index
     @series = Serie.all
   end
 
   def show
-    @serie = Serie.find(params[:id])
+    @reviews = @serie.reviews
   end
 
   def new
@@ -15,7 +15,7 @@ class SeriesController < ApplicationController
   def create
     @serie = Serie.new(serie_params)
     if @serie.save
-      redirect_to series_path(@serie), notice: "A neew title was added!"
+      redirect_to serie_path(@serie), notice: "A neew title was added!"
     else
       render :new
     end
@@ -23,7 +23,7 @@ class SeriesController < ApplicationController
 
   def destroy
     @serie.destroy
-    redirect_to series_index_path, notice: 'Title was destroyed'
+    redirect_to series_path, notice: 'Title was destroyed'
   end
 
   private

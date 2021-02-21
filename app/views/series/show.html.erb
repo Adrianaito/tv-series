@@ -11,16 +11,11 @@
         <% @serie.reviews.each do |review| %>
           <li><%= review.content %></li>
           <%= link_to "delete review", review_path(review), method: :delete  %>
-          <%# def destroy
-          @review = Review.find(params[:id])
-          @review.destroy
-          end %>
         <% end %>
       </ul>
     <% end %>
   </div>
 </div>
 <%= link_to 'add review', new_series_review_path(@serie)  %>
-<%= link_to 'Back', series_index_path %>
-<%= link_to 'add', new_series_path  %>
-<%= link_to "delete", series_path(@serie), method: :delete  %>
+<%= link_to 'Back', series_path %>
+<%= link_to "delete", serie_path(@serie), method: :delete  %>

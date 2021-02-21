@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.serie = @serie
     if @review.save
-      redirect_to series_path(@serie)
+      redirect_to serie_path(@serie)
     else
       render :new_series_review
     end
@@ -18,12 +18,12 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to series_path(@review.serie)
+    redirect_to serie_path(@review.serie)
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :photo)
   end
 end
