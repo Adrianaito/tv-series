@@ -12,6 +12,16 @@
   </head>
 
   <body>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to 'Home', series_path, class: "btn btn-warning" %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Add a title", new_serie_path, class: "btn btn-warning" %>
+      </li>
+    </ul>
+  </div>
+</div>
     <%= yield %>
   </body>
 </html>

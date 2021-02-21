@@ -1,4 +1,8 @@
-
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top: 4em;
+}
 .card-remove-link {
   color: white;
 // border-radius: 50%;
@@ -48,8 +52,9 @@ font-weight: lighter;
   position: relative;
   background-size: cover;
   background-position: center;
-  height: fit-content;
+  height: 16em;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: $gray;
@@ -58,7 +63,10 @@ font-weight: lighter;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 3em;
+  padding: 1em;
+  width: 10em;
+  margin: 1em;
+  // margin-top: 4em;
 }
 
 // To stretch the link on top of the card div
@@ -70,8 +78,22 @@ font-weight: lighter;
   width: 100%;
   color: $white;
 }
-
-
+.card-img {
+  width: 8em;
+  height: 11em;;
+}
+.card-body {
+  padding: 0;
+  p {
+    font-weight: 100;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  .card-text {
+    margin-top: 1rem;
+  }
+}
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -82,6 +104,9 @@ font-weight: lighter;
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
+    grid-template-columns: 1fr;
+  }
+  .card-grid {
     grid-template-columns: 1fr;
   }
 }

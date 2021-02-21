@@ -1,3 +1,4 @@
+require "open-uri"
 puts 'Cleaning database...'
 Serie.destroy_all
 puts 'creating series...'
@@ -16,10 +17,7 @@ end
 series.each do |serie|
   create_serie(serie)
 end
-
-
-
-
+require "open-uri"
 
 
 # url = 'http://www.omdbapi.com/?i=tt3896198&apikey=14eb96e7&'

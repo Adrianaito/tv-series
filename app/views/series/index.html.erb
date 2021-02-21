@@ -1,18 +1,34 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+
 <div class="container">
-  <%= link_to 'add new title', new_serie_path %>
+  <%#= link_to 'add new title', new_serie_path , class: 'btn btn-warning' %>
   <%#= simple_form_for :search, url: series_index_path, method: "GET", html: { class: 'form-inline' } do |f| %>
     <%#= f.input :name, input_html: {value: ""} %>
     <%#= f.submit "Search", class: "btn btn-primary" %>
     <%# end %>
-    <% @series.each do |serie| %>
-      <div class="card-category">
-        <%= image_tag serie.image, alt: "alttext" %>
-        <%= link_to " " , serie_path(serie), class: 'card-link' %>
-      </div>
-      <div class="card-body">
-        <p class="card-text"><%= serie.title %></p>
-        <p><%= serie.rating %> </p>
-      </div>
-    <% end %>
-  </div>
+    <div class="card-grid">
+      <!-- <div class="card-series"> -->
+      <% @series.each do |serie| %>
+       <% if serie.photo.attached? %>
+          <div class="card-category">
+            <%= cl_image_path serie.photo.key, class: 'card-img' %>
+            <%= link_to " " , serie_path(serie), class: 'card-link' %>
+            <div class="card-body">
+              <p class="card-text"><%= serie.title %></p>
+              <p><%= serie.rating %> </p>
+            </div>
+          </div>
+        <% else %>
+         <div class="card-category">
+            <%= image_tag serie.image, class: 'card-img', alt: "alttext" %>
+            <%= link_to " " , serie_path(serie), class: 'card-link' %>
+            <div class="card-body">
+              <p class="card-text"><%= serie.title %></p>
+              <p><%= serie.rating %> </p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- </div> -->
+</div>
