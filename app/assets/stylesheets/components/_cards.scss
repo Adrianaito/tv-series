@@ -1,7 +1,17 @@
+.body-container {
+  display: flex;
+  align-items: center;
+}
+
 .card-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-top: 4em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 10px;
+  // max-width: 100%;
 }
 .card-remove-link {
   color: white;
@@ -36,7 +46,7 @@ font-weight: lighter;
   align-items: center;
   height: 30px;
   width: 30px;
-  position: absolute;
+  // position: absolute;
   left: 10px;
   top: 10px;
   opacity: 0.8;
@@ -49,7 +59,7 @@ font-weight: lighter;
 }
 }
 .card-category {
-  position: relative;
+  // position: relative;
   background-size: cover;
   background-position: center;
   height: 16em;
@@ -71,7 +81,7 @@ font-weight: lighter;
 
 // To stretch the link on top of the card div
 .card-link {
-  position: absolute;
+  // position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -95,46 +105,51 @@ font-weight: lighter;
   }
 }
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 3em;
-  position: relative;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 3em;
+  // position: relative;
 }
 
-// Smallest device
+// // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+  // .container {
+  //   display: flex;
+  //   justify-content: center;
+  // }
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
   .card-grid {
-    grid-template-columns: 1fr;
+    // grid-template-columns: 1fr;
+    justify-content: center;
   }
-}
+// }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 895px) {
+  .card-category {
+    width: 40%;
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
