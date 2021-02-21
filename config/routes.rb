@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post 'series/:series_id/reviews', to: 'reviews#create', as: :serie_reviews
   get 'series/:series_id/reviews/new', to: 'reviews#new', as: :new_series_review
   delete  '/reviews/:id', to: 'reviews#destroy', as: :review
-
+  root to: 'series#index'
   # resources :series, path: :series
   # resources :series, except: :show do
   #   resources :reviews, only: [:new, :create]
@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   # resources :reviews, only: [:destroy]
   # get 'series/:id', to: 'series#show', as: :serie
 
-  # root to: 'series#home'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
