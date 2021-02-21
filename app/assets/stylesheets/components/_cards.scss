@@ -9,7 +9,7 @@
 }
 
 .card-grid {
-  padding-top: 4em;
+  padding-top: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -97,9 +97,13 @@ font-weight: lighter;
 }
 
 // // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+@media (min-width: 100px) and (max-width: 610px) {
+    .body-container {
+    flex-direction: column;
+  }
   .card-grid {
     justify-content: center;
+    flex-direction: column;
   }
 }
 
@@ -109,4 +113,3 @@ font-weight: lighter;
     width: 40%;
   }
 }
-

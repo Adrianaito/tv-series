@@ -3,7 +3,9 @@ puts 'Cleaning database...'
 Serie.destroy_all
 puts 'creating series...'
 
-series = ['friends', 'the+office', 'game+of+thrones', 'atlanta', 'how+I+met+your+mother']
+series = ['friends', 'the+office', 'game+of+thrones', 'atlanta', 'how+I+met+your+mother', 'bojack+horseman', 'american+gods',
+'community', 'fleabag', 'rick+and+morty', 'brooklyn+nine-nine', 'the+big+bang+theory', 'the+walking+dead',
+ 'trailer+park+boys', 'ozark', 'south+park', 'peaky+blinders', 'the+good+place', 'adventure+time', 'the+ranch']
 
 def create_serie(serie)
   url = "https://www.omdbapi.com/?t=#{serie}&apikey=adf1f2d7"
