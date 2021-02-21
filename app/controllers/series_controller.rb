@@ -15,7 +15,7 @@ class SeriesController < ApplicationController
   def create
     @serie = Serie.new(serie_params)
     if @serie.save
-      redirect_to serie_path(@serie), notice: "A neew title was added!"
+      redirect_to serie_path(@serie), notice: "A new title was added!"
     else
       render :new
     end
@@ -33,6 +33,6 @@ class SeriesController < ApplicationController
   end
 
   def serie_params
-    params.require(:serie).permit(:title, :rating, :image)
+    params.require(:serie).permit(:title, :rating, :photo)
   end
 end

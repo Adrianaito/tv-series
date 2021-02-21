@@ -11,7 +11,7 @@
       <% @series.each do |serie| %>
        <% if serie.photo.attached? %>
           <div class="card-category">
-            <%= cl_image_path serie.photo.key, class: 'card-img' %>
+          <%=  cl_image_tag serie.photo.key, class: 'card-img', alt: "alttext" %>
             <%= link_to " " , serie_path(serie), class: 'card-link' %>
             <div class="card-body">
               <p class="card-text"><%= serie.title %></p>

@@ -1,6 +1,10 @@
 <div class="card-review-container">
   <div class="card-category-show card-left">
-    <%= image_tag @serie.image, class: 'card-img', alt: "alttext" %>
+       <% if @serie.photo.attached? %>
+          <%=  cl_image_tag @serie.photo.key, class: 'card-img', alt: "alttext" %>
+        <% else %>
+            <%= image_tag @serie.image, class: 'card-img', alt: "alttext" %>
+        <% end %>
     <div class="card-body-show">
       <p class="card-text-show"><%= @serie.title %></p>
       <p>Rating : <%= @serie.rating %> </p>
