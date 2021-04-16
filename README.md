@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+[Revflix](https://revflix.herokuapp.com/) is a platform where you can add reviews for tv series.
+Built over a weekend as a challenge during Le Wagon bootcamp. 
